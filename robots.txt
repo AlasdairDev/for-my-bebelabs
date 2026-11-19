@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://alasdairdev.github.io/for-my-bebelabs/sitemap.xml
+# This is a personal page. Please do not index it.

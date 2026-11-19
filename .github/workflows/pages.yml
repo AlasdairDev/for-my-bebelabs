@@ -27,7 +27,7 @@ jobs:
       - name: Build static site
         run: |
           mkdir -p _site
-          cp -R index.html 404.html favicon.png robots.txt sitemap.xml site.webmanifest css js images _site/
+          cp -R index.html 404.html favicon.png robots.txt site.webmanifest css js images _site/
           cp .nojekyll _site/
 
       - name: Configure Pages
