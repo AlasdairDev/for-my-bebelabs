@@ -429,7 +429,11 @@ html.intro-seen .intro { display: none; }
 .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 
 .nav-links .nav-cta {
-  padding: 9px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
   border: 1px solid rgba(233, 167, 180, .3);
   border-radius: 999px;
   color: var(--berry-deep);
@@ -1776,7 +1780,7 @@ html.js [data-reveal].is-visible {
     padding-top: clamp(104px, 14vh, 140px);
   }
   .hero::before { top: 34%; right: -6%; opacity: .7; }
-  .hero-copy { max-width: 660px; }
+  .hero-copy { max-width: 660px; margin-inline: auto; }
   .collage {
     max-width: 470px;
     margin-top: 18px;
@@ -1786,6 +1790,11 @@ html.js [data-reveal].is-visible {
   .rituals-grid { grid-template-columns: 1fr; }
   .rituals-copy { max-width: 560px; }
   .receipt-wrap { margin-top: 6px; }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .wall { columns: 3 180px; column-gap: 22px; }
+  .polaroid { margin-bottom: 22px; }
 }
 
 @media (max-width: 760px) {
@@ -1855,8 +1864,8 @@ html.js [data-reveal].is-visible {
     top: auto;
     bottom: 14px;
     transform: none;
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
   }
   .lb-prev { left: 18px; }
   .lb-next { right: 18px; }
@@ -1890,7 +1899,7 @@ html.js [data-reveal].is-visible {
 }
 
 @media (max-width: 400px) {
-  .wall { column-gap: 12px; }
+  .wall { columns: 2 130px; column-gap: 12px; }
   .reason-card { min-height: 320px; }
   .section-note { font-size: 1.1rem; }
 }
