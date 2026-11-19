@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alasdairdev.github.io/for-my-bebelabs/sitemap.xml

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page not found ♡</title>
+  <meta name="description" content="This page wandered off.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#654a52">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="/for-my-bebelabs/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=DM+Sans:wght@400;500&family=Fraunces:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      overflow: hidden;
+      text-align: center;
+      color: #fbf1e7;
+      font-family: "DM Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 65% 50% at 50% 28%, #7d5b66 0%, transparent 68%),
+        radial-gradient(ellipse 80% 60% at 50% 112%, #563d45 0%, transparent 64%),
+        #654a52;
+    }
+    body::before {
+      content: "♡";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      font-family: "Fraunces", Georgia, serif;
+      font-size: min(68vw, 700px);
+      line-height: 1;
+      color: rgba(255, 255, 255, .035);
+      pointer-events: none;
+      z-index: 0;
+    }
+    main { position: relative; z-index: 1; max-width: 520px; }
+    .kicker {
+      margin: 0 0 8px;
+      font-family: "Caveat", cursive;
+      font-size: 1.55rem;
+      color: #f0aebb;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(6rem, 22vw, 10rem);
+      line-height: .85;
+      letter-spacing: -.06em;
+      color: #fbf1e7;
+    }
+    h1 span { color: #ffc3cf; font-style: italic; }
+    .copy {
+      margin: 26px auto 28px;
+      max-width: 34ch;
+      font-size: .98rem;
+      line-height: 1.7;
+      color: #e8d6cc;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: #a84e61;
+      color: #fbf1e7;
+      font-size: .92rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 12px 22px -14px rgba(0, 0, 0, .8);
+      transition: background .25s ease, transform .25s ease;
+    }
+    .btn:hover { background: #7e3547; transform: translateY(-2px); }
+    .small {
+      margin-top: 30px;
+      font-family: "Caveat", cursive;
+      font-size: 1.1rem;
+      color: #e8d6cc;
+      opacity: .6;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">wrong turn, love</p>
+    <h1>4<span>0</span>4</h1>
+    <p class="copy">This page wandered off. But our little corner is still here, waiting for you.</p>
+    <a class="btn" href="/for-my-bebelabs/">back to us ♡</a>
+    <p class="small">nothing is really lost</p>
+  </main>
+</body>
+</html>

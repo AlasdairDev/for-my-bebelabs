@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>two years of us ♡</title>
+  <meta name="description" content="A little place for Shane. Two years of us, and still counting.">
+  <meta name="theme-color" content="#654a52">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+  <link rel="canonical" href="https://alasdairdev.github.io/for-my-bebelabs/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="two years of us">
+  <meta property="og:title" content="two years of us ♡">
+  <meta property="og:description" content="A little place for Shane. Two years of sleep calls, blurry selfies, and choosing each other.">
+  <meta property="og:url" content="https://alasdairdev.github.io/for-my-bebelabs/">
+  <meta property="og:image" content="https://alasdairdev.github.io/for-my-bebelabs/images/og-cover.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Alasdair kissing Shane on the cheek while she holds a bouquet">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="two years of us ♡">
+  <meta name="twitter:description" content="A little place for Shane. Two years of sleep calls, blurry selfies, and choosing each other.">
+  <meta name="twitter:image" content="https://alasdairdev.github.io/for-my-bebelabs/images/og-cover.jpg">
+  <meta name="author" content="Alasdair">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <style>html{background:#654a52}</style>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (sessionStorage.getItem('introSeen') === '1') document.documentElement.classList.add('intro-seen'); } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <a class="skip" href="#story">skip to the good part</a>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <!-- ── the little envelope gate ───────────────────────── -->
+  <div class="intro" id="intro">
+    <div class="intro-inner">
+      <p class="intro-kicker">20.11.2026</p>
+      <div class="envelope intro-envelope" id="introEnvelope" role="button" tabindex="0" aria-label="Open your anniversary letter">
+        <div class="env-body"></div>
+        <div class="env-pocket"></div>
+        <div class="env-flap"></div>
+        <span class="env-to">to my favorite person</span>
+        <span class="env-from">from alasdair</span>
+        <span class="seal" aria-hidden="true">S</span>
+      </div>
+      <p class="intro-hint">tap to open <span aria-hidden="true">♡</span></p>
+      <p class="intro-small">made for you, again</p>
+    </div>
+  </div>
+
+  <!-- ── nav ────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="two years of us, back to top">
+      <span class="brand-mark" aria-hidden="true">s<span>♡</span>a</span>
+      <span class="brand-text">two years of us</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#story">the story</a>
+      <a href="#gallery">photos</a>
+      <a href="#reasons">reasons</a>
+      <a href="#letter" class="nav-cta">the letter</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ── hero ─────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> our second anniversary, 20 november</p>
+        <h1 class="hero-title">two years<br><em>of&nbsp;us<svg class="scribble" viewBox="0 0 320 26" preserveAspectRatio="none" aria-hidden="true"><path d="M4 18C62 6 128 4 186 11c44 5 86 6 130 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></em></h1>
+        <p class="hero-sub">Two years of sleep calls, blurry selfies, and choosing each other from miles apart. I wanted to give you something that stays, so I built you this. ♡</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#story">read our story <span aria-hidden="true">↓</span></a>
+          <button class="btn btn-ghost" id="loveBtn" type="button"><span aria-hidden="true">♡</span> send love</button>
+        </div>
+        <div class="counter">
+          <p class="counter-label">we've been us for</p>
+          <p class="counter-time">
+            <strong id="days">730</strong><span class="unit">days</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <b id="hours">00</b><span class="unit">hrs</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <b id="mins">00</b><span class="unit">min</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <b id="secs">00</b><span class="unit">sec</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="collage" aria-label="A little collage of us">
+        <figure class="frame frame-hug">
+          <img src="images/us-hug.webp" alt="Alasdair and Shane cheek to cheek" width="1200" height="1600" fetchpriority="high">
+          <figcaption>home.</figcaption>
+        </figure>
+        <figure class="frame frame-photobooth">
+          <img src="images/hero-photobooth.webp" alt="A photobooth strip of us making silly faces" width="900" height="1350">
+          <figcaption>us, being us</figcaption>
+        </figure>
+        <figure class="frame frame-her">
+          <img src="images/her.webp" alt="Shane, close up and pretty" width="900" height="1600" loading="lazy">
+          <figcaption>my favorite person</figcaption>
+        </figure>
+        <img class="sticker sticker-cat" src="images/sticker-cat.webp" alt="" aria-hidden="true" width="360" height="316" loading="lazy">
+        <span class="doodle doodle-heart" aria-hidden="true">♡</span>
+        <span class="doodle doodle-star" aria-hidden="true">✦</span>
+        <span class="collage-note">us, lately ♡</span>
+      </div>
+    </section>
+
+    <!-- ── marquee ──────────────────────────────────────── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>shane ♡ alasdair</span><span>two years</span><span>still falling</span><span>20 · 11</span><span>my pahinga</span><span>est. 1120</span>
+        <span>shane ♡ alasdair</span><span>two years</span><span>still falling</span><span>20 · 11</span><span>my pahinga</span><span>est. 1120</span>
+      </div>
+    </div>
+
+    <!-- ── 01 · story ───────────────────────────────────── -->
+    <section class="section story" id="story">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="section-label">01 / the story</p>
+          <h2>how we got here</h2>
+        </div>
+        <p class="section-note">from 1120 to forever
+          <svg viewBox="0 0 64 30" width="64" height="30" aria-hidden="true"><path d="M2 24C14 10 34 6 55 10M55 10l-8-5M55 10l-6 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </p>
+      </div>
+
+      <div class="story-top">
+        <div class="story-copy" data-reveal>
+          <p class="lead">Two years ago, the 20th of November stopped being just another date. It became the day I got lucky in the way that matters most. I got you.</p>
+          <p>We started with random chats and late-night calls. Then we built a whole little world out of them. Playlists, valorant duos, discord movie nights, and a hundred small ways of saying <em>“i'm here.”</em> Somewhere in all that noise, you became my <strong class="clue-word">clarity</strong>.</p>
+          <span class="sig">your alasdair</span>
+        </div>
+
+        <div class="numbers" data-reveal>
+          <span class="tape tape-top" aria-hidden="true"></span>
+          <div class="num"><strong>2</strong><span>years of us</span></div>
+          <div class="num"><strong>730</strong><span>days together</span></div>
+          <div class="num"><strong>17,520</strong><span>hours of you</span></div>
+          <div class="num"><strong>∞</strong><span>more to go</span></div>
+        </div>
+      </div>
+
+      <ol class="timeline">
+        <li class="tl-item is-milestone" data-reveal>
+          <span class="tl-date">20.11.2024</span>
+          <span class="tl-dot" aria-hidden="true">♡</span>
+          <div class="tl-body">
+            <h3>the day it started</h3>
+            <p>The 20th of November stopped being a normal date. It became the day I got to call you mine. My favorite date ever since.</p>
+          </div>
+        </li>
+        <li class="tl-item" data-reveal>
+          <span class="tl-date">2025</span>
+          <span class="tl-dot" aria-hidden="true">♡</span>
+          <div class="tl-body">
+            <h3>the first gig</h3>
+            <p>Loud music, awkward hellos, and you being the clearest thing in the room. I still think about that night.</p>
+          </div>
+        </li>
+        <li class="tl-item" data-reveal>
+          <span class="tl-date">2025</span>
+          <span class="tl-dot" aria-hidden="true">♡</span>
+          <div class="tl-body">
+            <h3>the late-night era</h3>
+            <p>Sleep calls, discord movie nights, valorant duos, and your voice being the last thing I hear before I fall asleep.</p>
+          </div>
+        </li>
+        <li class="tl-item" data-reveal>
+          <span class="tl-date">2025</span>
+          <span class="tl-dot" aria-hidden="true">♡</span>
+          <div class="tl-body">
+            <h3>the first “i love you”</h3>
+            <p>You said it first in chat. I stared at my screen like an idiot, smiling. Still my favorite notification ever.</p>
+          </div>
+        </li>
+        <li class="tl-item is-milestone" data-reveal>
+          <span class="tl-date">20.11.2025</span>
+          <span class="tl-dot" aria-hidden="true">♡</span>
+          <div class="tl-body">
+            <h3>one whole year</h3>
+            <p>365 days of choosing each other, even from far away. Cake, flowers, and the thought that I'd do it all again.</p>
+          </div>
+        </li>
+        <li class="tl-item is-milestone" data-reveal>
+          <span class="tl-date">20.11.2026</span>
+          <span class="tl-dot" aria-hidden="true">♡</span>
+          <div class="tl-body">
+            <h3>two years &amp; still falling</h3>
+            <p>730 days later, you're still my pahinga, my favorite person, and the best part of every ordinary day.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ── 02 · gallery ─────────────────────────────────── -->
+    <section class="section gallery" id="gallery">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="section-label">02 / the gallery</p>
+          <h2>a wall of us</h2>
+        </div>
+      </div>
+
+      <div class="wall" id="photoWall"></div>
+    </section>
+
+    <!-- ── 03 · reasons ─────────────────────────────────── -->
+    <section class="section reasons" id="reasons">
+      <div class="section-head is-center" data-reveal>
+        <p class="section-label">03 / little reasons</p>
+        <h2>why i still choose you</h2>
+        <p class="section-note">draw a card, love</p>
+      </div>
+
+      <div class="deck-wrap" data-reveal>
+        <div class="deck">
+          <div class="reason-card" id="reasonCard" role="button" tabindex="0" aria-label="Draw another reason">
+            <span class="reason-no" id="reasonNo">no. 01</span>
+            <span class="reason-heart" aria-hidden="true">♡</span>
+            <p class="reason-text" id="reasonText" aria-live="polite">because you make the distance feel smaller. hindi mo ginagawang madali, pero ginagawa mong worth it.</p>
+            <span class="reason-sig">alasdair</span>
+          </div>
+        </div>
+        <p class="deck-count"><span id="reasonCount">01</span> / <span>10</span></p>
+        <button class="btn btn-primary" id="nextReason" type="button">draw another <span aria-hidden="true">♡</span></button>
+      </div>
+    </section>
+
+    <!-- ── the little rituals ───────────────────────────── -->
+    <section class="section rituals" aria-labelledby="rituals-title">
+      <div class="rituals-grid">
+        <div class="rituals-copy" data-reveal>
+          <p class="section-label">between the big days</p>
+          <h2 id="rituals-title">our ordinary magic</h2>
+          <p class="rituals-text">Walang kailangang grand gesture. Tayo yung mga sleep call na ayaw pa mag-drop, yung <em>“kumain ka na ba?”</em> na paulit-ulit, at yung mga gabing kahit pagod, okay lang kasi nandiyan ka.</p>
+          <p class="rituals-text">These are the little things I'd miss the most if I had to live without them. So I'm keeping them here.</p>
+          <span class="sig">the ordinary, with you</span>
+        </div>
+
+        <div class="receipt-wrap" data-reveal>
+          <div class="receipt" role="img" aria-label="A receipt of our little rituals. Sleep calls, movie nights, valorant duos, and more. Total, still in love.">
+            <p class="receipt-title">OUR LITTLE RITUALS</p>
+            <p class="receipt-sub">est. 20.11.2024, no returns, no refunds</p>
+            <div class="r-row"><span>sleep calls</span><i></i><span>× 730</span></div>
+            <div class="r-row"><span>discord movie nights</span><i></i><span>× a lot</span></div>
+            <div class="r-row"><span>valorant duos</span><i></i><span>× di na mabilang</span></div>
+            <div class="r-row"><span>“kumain ka na ba?”</span><i></i><span>× every day</span></div>
+            <div class="r-row"><span>photobooth strips</span><i></i><span>× 3</span></div>
+            <div class="r-row"><span>tight hugs</span><i></i><span>× not enough</span></div>
+            <div class="r-total"><span>TOTAL</span><span>still in love</span></div>
+            <p class="receipt-thanks">thank you for choosing me back, every single day.</p>
+            <div class="barcode" aria-hidden="true"></div>
+          </div>
+          <img class="sticker receipt-sticker" src="images/sticker-cat.webp" alt="" aria-hidden="true" width="360" height="316" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 · letter ──────────────────────────────────── -->
+    <section class="section letter-section" id="letter">
+      <div class="section-head is-center" data-reveal>
+        <p class="section-label">04 / the letter</p>
+        <h2>a letter for you</h2>
+        <p class="section-note">open when you miss me</p>
+      </div>
+
+      <div class="letter-stage" id="letterStage">
+        <div class="envelope envelope-big" id="envelopeBig" role="button" tabindex="0" aria-label="Open the letter">
+          <div class="env-body"></div>
+          <div class="env-pocket"></div>
+          <div class="env-flap"></div>
+          <span class="env-to">for my shane</span>
+          <span class="env-from">always, a.</span>
+          <span class="env-stamp" aria-hidden="true"><img src="images/heart.png" alt="" width="192" height="162"></span>
+          <span class="seal" aria-hidden="true">S</span>
+        </div>
+        <p class="envelope-tap">tap the envelope to open it</p>
+
+        <article class="letter-paper" id="letterPaper" tabindex="-1" hidden>
+          <span class="paper-tape" aria-hidden="true"></span>
+          <p class="letter-date">20.11.2026</p>
+          <h3 class="letter-head">shane,</h3>
+          <p>Two years. Ang bilis, pero hindi rin. Parang ang dami nang nangyari, pero parang kulang pa rin yung oras na magkasama tayo.</p>
+          <p>Hindi ko alam kung ano exactly yung nagbago this year. Basta mas naging tahimik yung pagmamahal ko sa'yo. Hindi na siya yung kinakabahan. Yung tipong okay lang kahit wala tayong gawin, basta nandiyan ka. Dun ko narealize na mahal kita hindi lang sa mga malalaking sandali. Mahal kita sa mga ordinaryong araw.</p>
+          <p>Salamat sa dalawang taon. Salamat sa pag-intindi kapag hindi ako madaling kausapin. Salamat sa mga gabing antok na antok na tayo pero ayaw pa nating mag-drop. Salamat sa pagpili sa akin, kahit ang layo layo natin.</p>
+          <p>Isa sa paborito ko sa'yo yung pag-aalala mo. Yung mga simpleng tanong kung kumain na ako, kung nakauwi na ako, kung okay lang ako. Hindi mo kailangang gumawa ng malaking bagay para iparamdam na nandiyan ka. Ramdam ko na lang.</p>
+          <p>Mahal ko yung mga picture natin. Yung mga pangit ang lighting, yung mga hindi ayos ang buhok, yung mga biglaang kuha lang. Hindi sila perfect, pero totoo. Parang tayo. Hindi perfect, pero totoo.</p>
+          <p>Hindi ko alam kung ano ang year three. Hindi ako magpo-promise ng malaking bagay. Ang promise ko lang, nandito ako. Pipiliin pa rin kita sa mga araw na madali, at lalo na sa mga araw na hindi.</p>
+          <p>Mahal na mahal kita, Shane. Hindi lang dahil anniversary natin. Dahil ikaw yun. At hindi na 'yon magbabago.</p>
+          <p class="letter-sign">always yours,<br><span>alasdair</span></p>
+          <p class="letter-ps">p.s. may maliit pa akong secret sa baba ↓</p>
+          <span class="letter-stamp" aria-hidden="true">♡</span>
+          <button class="letter-close" id="closeLetter" type="button">close the letter</button>
+        </article>
+      </div>
+
+      <div class="secret" id="secretCard" data-reveal>
+        <div class="secret-inner">
+          <p class="secret-kicker">one more thing, love</p>
+          <h3><span aria-hidden="true">♡</span> a tiny secret</h3>
+          <p class="secret-text">There is one more note hidden here. Enter the passcode to unlock it.</p>
+          <form class="secret-form" id="secretForm" novalidate>
+            <label class="sr-only" for="secretInput">Secret passcode</label>
+            <input id="secretInput" type="text" maxlength="24" placeholder="passcode" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="secretMsg">
+            <button class="btn btn-primary" type="submit">unlock <span aria-hidden="true">♡</span></button>
+          </form>
+          <p class="secret-msg" id="secretMsg" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-eyebrow">and if i had to do it all again</p>
+    <h2>i'd still choose <em>you</em>.</h2>
+    <p class="footer-sub">happy 2nd anniversary, shane nicole casas ♡</p>
+    <button class="heart-btn" id="heartBtn" type="button" aria-label="Send a little love">♥</button>
+    <div class="footer-bottom">
+      <span>made with love and a lot of code</span>
+      <span>20.11.2026</span>
+      <span>for shane, always</span>
+    </div>
+    <p class="footer-path" aria-hidden="true">~/us/clarity1120/index.html</p>
+  </footer>
+
+  <!-- ── lightbox ───────────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-close" id="lbClose" type="button" aria-label="Close photo viewer">×</button>
+    <button class="lb-prev" id="lbPrev" type="button" aria-label="Previous photo">←</button>
+    <figure class="lb-figure">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap" hidden></figcaption>
+    </figure>
+    <button class="lb-next" id="lbNext" type="button" aria-label="Next photo">→</button>
+    <p class="lb-count" id="lbCount"></p>
+  </div>
+
+  <script src="js/photos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
