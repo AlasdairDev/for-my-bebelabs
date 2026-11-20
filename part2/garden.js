@@ -136,8 +136,11 @@
       const drawBouquetStems = () => {
         const box = bouquetEl.getBoundingClientRect();
         if (!box.width || !box.height) return;
+        const designW = bouquetEl.offsetWidth || box.width;
+        const designH = bouquetEl.offsetHeight || box.height;
+        const k = box.width / designW || 1;
         const neckY = wrap.offsetTop + 8;
-        const cx0 = box.width / 2;
+        const cx0 = designW / 2;
         const gather = [-72, -4, 58];
         const bend = [0.24, 0.54, 0.36];
         const leafPath = "M0 0 C-12 -7 -19 -20 -14 -31 C-2 -27 6 -14 0 0 Z";
@@ -149,8 +152,8 @@
           const bloom = flower.querySelector(".bloom");
           if (!bloom) return;
           const rect = bloom.getBoundingClientRect();
-          const x1 = rect.left + rect.width / 2 - box.left;
-          const y1 = rect.top + rect.height * 0.45 - box.top;
+          const x1 = (rect.left + rect.width / 2 - box.left) / k;
+          const y1 = (rect.top + rect.height * 0.45 - box.top) / k;
           const x2 = cx0 + (gather[index] || 0);
           const y2 = neckY + 24;
           const t = bend[index];
@@ -197,12 +200,30 @@
           );
         });
 
-        stemLayer.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
+        stemLayer.setAttribute("viewBox", `0 0 ${designW} ${designH}`);
         stemLayer.innerHTML = stemMarkup.join("") + leafMarkup.join("") + sprigMarkup.join("");
       };
 
-      window.requestAnimationFrame(drawBouquetStems);
-      window.addEventListener("resize", drawBouquetStems);
+      const fitBouquet = () => {
+        if (window.matchMedia("(max-width: 980px)").matches) {
+          bouquetEl.style.removeProperty("--fit");
+          return;
+        }
+        const designH = bouquetEl.offsetHeight || 1;
+        const top = heroVisual.getBoundingClientRect().top + window.scrollY;
+        const room = window.innerHeight - top - 18;
+        const fit = Math.max(0.74, Math.min(1, room / designH));
+        bouquetEl.style.setProperty("--fit", fit.toFixed(4));
+      };
+
+      window.requestAnimationFrame(() => {
+        fitBouquet();
+        drawBouquetStems();
+      });
+      window.addEventListener("resize", () => {
+        fitBouquet();
+        drawBouquetStems();
+      });
 
       heroVisual.appendChild(bouquetEl);
 
