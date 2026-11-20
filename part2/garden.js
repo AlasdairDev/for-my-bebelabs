@@ -30,7 +30,7 @@
 
   const makeFlower = (group, { isHero = false, flowerIndex = 0 } = {}) => {
     const flower = document.createElement("article");
-    flower.className = "flower" + (isHero ? " hero-flower" : "");
+    flower.className = "flower" + (isHero ? " bouquet-flower" : "");
     flower.style.setProperty("--sway", (-flowerIndex * 1.15).toFixed(2) + "s");
 
     const bloom = document.createElement("div");
@@ -94,19 +94,53 @@
       );
     }
 
-    const heroGroup = groups[0];
-    const gardenGroups = groups.slice(1);
+    const heroGroups = groups.slice(0, 3);
+    const gardenGroups = groups.slice(3);
+    let bouquetEl = null;
+    const heroFlowers = [];
 
-    if (heroGroup.length) {
-      const heroFlower = makeFlower(heroGroup, { isHero: true });
-      heroVisual.appendChild(heroFlower);
-      allFlowers.push(heroFlower);
+    if (heroGroups.some((group) => group.length)) {
+      bouquetEl = document.createElement("div");
+      bouquetEl.className = "bouquet";
 
-      const bloomHero = () => heroFlower.classList.add("is-bloomed");
+      const positions = ["bouquet-left", "bouquet-center", "bouquet-right"];
+      heroGroups.forEach((group, index) => {
+        if (!group.length) return;
+        const flower = makeFlower(group, { isHero: true, flowerIndex: index });
+        flower.classList.add("bouquet-flower", positions[index]);
+        bouquetEl.appendChild(flower);
+        heroFlowers.push(flower);
+        allFlowers.push(flower);
+      });
+
+      const wrap = document.createElement("div");
+      wrap.className = "bouquet-wrap";
+      wrap.innerHTML = `
+        <span class="ribbon-band" aria-hidden="true"></span>
+        <span class="ribbon" aria-hidden="true">
+          <svg viewBox="0 0 120 80" focusable="false">
+            <path d="M60 42C42 24 14 12 10 30c-4 20 22 30 50 16 26 14 54 6 50-16-4-18-32-6-50 12Z" fill="#a84e61"/>
+            <path d="M56 48 38 78l14-3 6-22Z" fill="#8e3a4d"/>
+            <path d="M64 48 82 78l-14-3-6-22Z" fill="#8e3a4d"/>
+            <circle cx="60" cy="43" r="11" fill="#7e3547"/>
+          </svg>
+        </span>
+      `;
+      bouquetEl.appendChild(wrap);
+      heroVisual.appendChild(bouquetEl);
+
+      const bloomBouquet = () => {
+        bouquetEl.classList.add("is-bloomed");
+        heroFlowers.forEach((flower, index) => {
+          window.setTimeout(() => flower.classList.add("is-bloomed"), index * 140);
+        });
+      };
+
       if (reduceMotion) {
-        bloomHero();
+        heroFlowers.forEach((flower) => flower.classList.add("is-bloomed"));
+        bouquetEl.classList.add("is-bloomed");
       } else {
-        window.setTimeout(bloomHero, 350);
+        window.setTimeout(bloomBouquet, 350);
       }
     }
 
@@ -140,9 +174,12 @@
   if (rebloom) {
     rebloom.addEventListener("click", () => {
       allFlowers.forEach((flower) => flower.classList.remove("is-bloomed"));
+      const bouquet = document.querySelector(".bouquet");
+      if (bouquet) bouquet.classList.remove("is-bloomed");
       // force the petals and stems back to their closed state
       void document.body.offsetWidth;
       window.setTimeout(() => {
+        if (bouquet) bouquet.classList.add("is-bloomed");
         allFlowers.forEach((flower, index) => {
           window.setTimeout(() => flower.classList.add("is-bloomed"), index * 110);
         });
