@@ -319,21 +319,21 @@ main { position: relative; z-index: 2; }
 
 .bouquet-left {
   left: 2%;
-  bottom: 414px;
+  bottom: 396px;
   --size: clamp(155px, 16vw, 184px);
   transform: rotate(-11deg);
   z-index: 3;
 }
 .bouquet-center {
   left: 50%;
-  bottom: 430px;
+  bottom: 412px;
   --size: clamp(205px, 21vw, 252px);
   transform: translateX(-52%) rotate(3deg);
   z-index: 4;
 }
 .bouquet-right {
   right: 4%;
-  bottom: 400px;
+  bottom: 384px;
   --size: clamp(142px, 15vw, 170px);
   transform: rotate(13deg);
   z-index: 2;
