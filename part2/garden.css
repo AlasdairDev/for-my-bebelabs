@@ -394,7 +394,15 @@ main { position: relative; z-index: 2; }
 }
 .bouquet-stems .stem-under { stroke: #7f927a; stroke-width: 7; }
 .bouquet-stems .stem-over { stroke: #b3c1a9; stroke-width: 3.6; }
+.bouquet-stems .stem-leaf {
+  fill: #a8b69e;
+  stroke: #7f927a;
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity .7s ease .95s;
+}
 .bouquet.is-bloomed .bouquet-stems path { opacity: .96; }
+.bouquet.is-bloomed .bouquet-stems .stem-leaf { opacity: .96; }
 
 .bouquet-leaves {
   position: absolute;

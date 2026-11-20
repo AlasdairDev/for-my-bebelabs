@@ -128,12 +128,6 @@
       `;
       bouquetEl.appendChild(wrap);
 
-      const leaves = document.createElement("div");
-      leaves.className = "bouquet-leaves";
-      leaves.setAttribute("aria-hidden", "true");
-      leaves.innerHTML = "<span></span><span></span><span></span>";
-      bouquetEl.appendChild(leaves);
-
       const stemLayer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       stemLayer.setAttribute("class", "bouquet-stems");
       stemLayer.setAttribute("aria-hidden", "true");
@@ -144,23 +138,36 @@
         if (!box.width || !box.height) return;
         const neckY = wrap.offsetTop + 6;
         const gather = [-26, 0, 26];
-        const paths = heroFlowers.map((flower, index) => {
+        const leafPath = "M0 0 C-13 -8 -21 -22 -15 -33 C-2 -29 6 -15 0 0 Z";
+        const stemMarkup = [];
+        const leafMarkup = [];
+
+        heroFlowers.forEach((flower, index) => {
           const bloom = flower.querySelector(".bloom");
-          if (!bloom) return "";
+          if (!bloom) return;
           const rect = bloom.getBoundingClientRect();
           const x1 = rect.left + rect.width / 2 - box.left;
-          const y1 = rect.bottom - box.top;
+          const y1 = rect.top + rect.height / 2 - box.top;
           const x2 = box.width / 2 + (gather[index] || 0);
           const y2 = neckY + 46;
           const cx = x1 + (x2 - x1) * 0.4;
           const cy = y1 + (y2 - y1) * 0.55;
-          return `M ${x1.toFixed(1)} ${y1.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
-        }).filter(Boolean);
+          const d = `M ${x1.toFixed(1)} ${y1.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+          stemMarkup.push(`<path class="stem-under" d="${d}" /><path class="stem-over" d="${d}" />`);
+
+          [0.48, 0.62].forEach((t, leafIndex) => {
+            const mt = 1 - t;
+            const lx = mt * mt * x1 + 2 * mt * t * cx + t * t * x2;
+            const ly = mt * mt * y1 + 2 * mt * t * cy + t * t * y2;
+            const side = (index + leafIndex) % 2 === 0 ? -1 : 1;
+            leafMarkup.push(
+              `<path class="stem-leaf" d="${leafPath}" transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(${side * 28})" />`
+            );
+          });
+        });
 
         stemLayer.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
-        stemLayer.innerHTML = paths
-          .map((d) => `<path class="stem-under" d="${d}" /><path class="stem-over" d="${d}" />`)
-          .join("");
+        stemLayer.innerHTML = stemMarkup.join("") + leafMarkup.join("");
       };
 
       window.requestAnimationFrame(drawBouquetStems);
