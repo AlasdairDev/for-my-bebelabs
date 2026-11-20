@@ -136,38 +136,69 @@
       const drawBouquetStems = () => {
         const box = bouquetEl.getBoundingClientRect();
         if (!box.width || !box.height) return;
-        const neckY = wrap.offsetTop + 6;
-        const gather = [-26, 0, 26];
-        const leafPath = "M0 0 C-13 -8 -21 -22 -15 -33 C-2 -29 6 -15 0 0 Z";
+        const neckY = wrap.offsetTop + 8;
+        const cx0 = box.width / 2;
+        const gather = [-72, -4, 58];
+        const bend = [0.24, 0.54, 0.36];
+        const leafPath = "M0 0 C-12 -7 -19 -20 -14 -31 C-2 -27 6 -14 0 0 Z";
         const stemMarkup = [];
         const leafMarkup = [];
+        const sprigMarkup = [];
 
         heroFlowers.forEach((flower, index) => {
           const bloom = flower.querySelector(".bloom");
           if (!bloom) return;
           const rect = bloom.getBoundingClientRect();
           const x1 = rect.left + rect.width / 2 - box.left;
-          const y1 = rect.top + rect.height / 2 - box.top;
-          const x2 = box.width / 2 + (gather[index] || 0);
-          const y2 = neckY + 46;
-          const cx = x1 + (x2 - x1) * 0.4;
-          const cy = y1 + (y2 - y1) * 0.55;
+          const y1 = rect.top + rect.height * 0.45 - box.top;
+          const x2 = cx0 + (gather[index] || 0);
+          const y2 = neckY + 24;
+          const t = bend[index];
+          const cx = x1 + (x2 - x1) * t;
+          const cy = y1 + (y2 - y1) * 0.72;
           const d = `M ${x1.toFixed(1)} ${y1.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
           stemMarkup.push(`<path class="stem-under" d="${d}" /><path class="stem-over" d="${d}" />`);
 
-          [0.48, 0.62].forEach((t, leafIndex) => {
-            const mt = 1 - t;
-            const lx = mt * mt * x1 + 2 * mt * t * cx + t * t * x2;
-            const ly = mt * mt * y1 + 2 * mt * t * cy + t * t * y2;
-            const side = (index + leafIndex) % 2 === 0 ? -1 : 1;
+          // sepals, so the head grows out of the stem instead of sitting on it
+          const st = 0.16;
+          const smt = 1 - st;
+          const sx1 = smt * smt * x1 + 2 * smt * st * cx + st * st * x2;
+          const sy1 = smt * smt * y1 + 2 * smt * st * cy + st * st * y2;
+          [-38, -8, 24].forEach((deg, k) => {
             leafMarkup.push(
-              `<path class="stem-leaf" d="${leafPath}" transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(${side * 28})" />`
+              `<ellipse class="sepal" cx="0" cy="9" rx="${4.2 - k * 0.3}" ry="${9.5 - k}" transform="translate(${sx1.toFixed(1)} ${sy1.toFixed(1)}) rotate(${deg + (index - 1) * 5})" />`
             );
           });
+
+          const lt = index === 1 ? 0.54 : 0.44;
+          const mt = 1 - lt;
+          const lx = mt * mt * x1 + 2 * mt * lt * cx + lt * lt * x2;
+          const ly = mt * mt * y1 + 2 * mt * lt * cy + lt * lt * y2;
+          const side = index === 2 ? 1 : -1;
+          leafMarkup.push(
+            `<path class="stem-leaf" d="${leafPath}" transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(${(side * 30 + (index - 1) * 6).toFixed(1)})" />`
+          );
+        });
+
+        // a collar of leaves hides the stem junction, the way a real bunch does
+        const collarLeaf = "M0 0 C-12 -7 -19 -21 -13 -33 C-1 -28 7 -14 0 0 Z";
+        const collar = [
+          [-104, -72, 7, 1.4, "a"],
+          [-70, -44, 25, 1.65, "b"],
+          [-34, -21, 2, 1.8, "a"],
+          [2, 5, 16, 1.7, "b"],
+          [40, 27, -3, 1.75, "a"],
+          [76, 49, 22, 1.6, "b"],
+          [108, 71, 6, 1.35, "a"]
+        ];
+        collar.forEach(([dx, deg, dy, sc, tone]) => {
+          sprigMarkup.push(
+            `<path class="collar-leaf collar-${tone}" d="${collarLeaf}" transform="translate(${(cx0 + dx).toFixed(1)} ${(neckY + 22 + dy).toFixed(1)}) rotate(${deg}) scale(${sc})" />`
+          );
         });
 
         stemLayer.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
-        stemLayer.innerHTML = stemMarkup.join("") + leafMarkup.join("");
+        stemLayer.innerHTML = stemMarkup.join("") + leafMarkup.join("") + sprigMarkup.join("");
       };
 
       window.requestAnimationFrame(drawBouquetStems);
