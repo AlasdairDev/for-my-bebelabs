@@ -314,13 +314,13 @@ main { position: relative; z-index: 2; }
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 42%;
-  height: 50%;
-  margin-left: -21%;
-  margin-top: -50%;
+  width: 29%;
+  height: 48%;
+  margin-left: -14.5%;
+  margin-top: -48%;
   padding: 0;
   border: 3px solid var(--paper);
-  border-radius: 55% 55% 45% 45% / 82% 82% 18% 18%;
+  border-radius: 55% 55% 45% 45% / 86% 86% 14% 14%;
   background: var(--surface);
   overflow: hidden;
   cursor: zoom-in;
@@ -343,9 +343,35 @@ main { position: relative; z-index: 2; }
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
+  transform: rotate(calc(var(--a) * -1)) scale(1.45);
   filter: saturate(.94) brightness(.96);
-  transition: filter .35s ease, transform .55s ease;
+  transition: filter .35s ease;
 }
+.back-petal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 33%;
+  height: 52%;
+  margin-left: -16.5%;
+  margin-top: -52%;
+  transform-origin: 50% 100%;
+  transform: rotate(calc(var(--a) - 14deg)) scale(.28);
+  opacity: 0;
+  border: 2px solid rgba(255, 246, 238, .55);
+  border-radius: 58% 58% 46% 46% / 86% 86% 14% 14%;
+  background: linear-gradient(180deg, #ecc9cd 0%, #dda7b1 55%, #b97484 100%);
+  box-shadow: 0 10px 20px -12px rgba(0, 0, 0, .4);
+  z-index: 1;
+  transition: transform .95s cubic-bezier(.18, .8, .25, 1), opacity .7s ease;
+  transition-delay: calc(var(--i) * 60ms + 80ms);
+}
+.hero-flower .back-petal { transition-delay: calc(var(--i) * 70ms + 230ms); }
+.is-bloomed .back-petal {
+  opacity: .96;
+  transform: rotate(var(--a)) scale(1);
+}
+
 .is-bloomed .petal {
   opacity: 1;
   transform: rotate(var(--a)) scale(1);
@@ -391,7 +417,7 @@ main { position: relative; z-index: 2; }
 .stem-line {
   fill: none;
   stroke: var(--sage);
-  stroke-width: 3;
+  stroke-width: 3.6;
   stroke-linecap: round;
   stroke-dasharray: 260;
   stroke-dashoffset: 260;
@@ -667,7 +693,7 @@ main { position: relative; z-index: 2; }
     transition-duration: .001ms !important;
   }
   .garden-petals { display: none; }
-  .petal { opacity: 1; transform: rotate(var(--a)) scale(1); }
+  .petal, .back-petal { opacity: 1; transform: rotate(var(--a)) scale(1); }
   .stem-line { stroke-dashoffset: 0; }
   .leaf { opacity: .92; transform: none; }
 }

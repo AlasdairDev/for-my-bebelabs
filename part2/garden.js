@@ -36,6 +36,16 @@
     const bloom = document.createElement("div");
     bloom.className = "bloom";
 
+    // a fuller ring behind the photo petals, so each flower reads as a flower
+    for (let i = 0; i < group.length; i++) {
+      const back = document.createElement("span");
+      back.className = "back-petal";
+      back.style.setProperty("--a", ((i * (360 / group.length)) + (180 / group.length)).toFixed(2) + "deg");
+      back.style.setProperty("--i", String(i));
+      back.setAttribute("aria-hidden", "true");
+      bloom.appendChild(back);
+    }
+
     group.forEach((item, petalIndex) => {
       const petal = document.createElement("button");
       petal.type = "button";
