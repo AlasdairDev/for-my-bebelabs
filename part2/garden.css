@@ -317,21 +317,21 @@ main { position: relative; z-index: 2; }
 
 .bouquet-left {
   left: 2%;
-  bottom: 443px;
+  bottom: 431px;
   --size: clamp(155px, 16vw, 184px);
   transform: rotate(-11deg);
   z-index: 3;
 }
 .bouquet-center {
   left: 50%;
-  bottom: 460px;
+  bottom: 450px;
   --size: clamp(205px, 21vw, 252px);
   transform: translateX(-52%) rotate(3deg);
   z-index: 4;
 }
 .bouquet-right {
   right: 4%;
-  bottom: 428px;
+  bottom: 416px;
   --size: clamp(142px, 15vw, 170px);
   transform: rotate(13deg);
   z-index: 2;
@@ -357,7 +357,7 @@ main { position: relative; z-index: 2; }
     linear-gradient(115deg, transparent 0 16%, rgba(255, 255, 255, .15) 16% 17%, transparent 17%),
     linear-gradient(65deg, transparent 0 83%, rgba(110, 70, 70, .1) 83% 84%, transparent 84%),
     linear-gradient(155deg, #f1dfd2, #e0c2b6 55%, #c39b90);
-  clip-path: polygon(0 9%, 100% 0, 61% 100%, 39% 100%);
+  clip-path: polygon(0 3%, 100% 0, 61% 100%, 39% 100%);
   box-shadow: inset 0 8px 0 rgba(255, 255, 255, .16), inset 0 0 0 1px rgba(255, 255, 255, .3);
   filter: drop-shadow(0 24px 26px rgba(0, 0, 0, .28));
 }
@@ -370,7 +370,7 @@ main { position: relative; z-index: 2; }
     linear-gradient(90deg, transparent 0 47%, rgba(110, 70, 70, .14) 47% 51%, transparent 51%),
     linear-gradient(125deg, transparent 0 29%, rgba(110, 70, 70, .08) 29% 30%, transparent 30%),
     linear-gradient(55deg, transparent 0 70%, rgba(255, 255, 255, .12) 70% 71%, transparent 71%);
-  clip-path: polygon(0 9%, 100% 0, 61% 100%, 39% 100%);
+  clip-path: polygon(0 3%, 100% 0, 61% 100%, 39% 100%);
   pointer-events: none;
 }
 .bouquet.is-bloomed .bouquet-wrap {
