@@ -1609,6 +1609,21 @@ html.intro-seen .intro { display: none; }
   font-size: .95rem;
   color: rgba(248, 236, 223, .68);
 }
+.part-two-link {
+  position: relative;
+  margin-top: 20px;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+.part-two-link a {
+  color: var(--rose);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(240, 174, 187, .35);
+  padding-bottom: 2px;
+  transition: color .25s ease, border-color .25s ease;
+}
+.part-two-link a:hover { color: var(--ink); border-color: var(--ink); }
 .heart-btn {
   position: relative;
   display: grid;

@@ -14,297 +14,299 @@
    line like: caption: "our little caption",
    ═══════════════════════════════════════════════════════════ */
 
+const PHOTO_BASE = window.PHOTO_BASE || "images/";
+
 const PHOTOS = [
   {
-    src: "images/us-hug.webp",
+    src: PHOTO_BASE + "us-hug.webp",
     w: 1200, h: 1600,
     alt: "Alasdair and Shane cheek to cheek, smiling",
     tape: "rose"
   },
   {
-    src: "images/wall-05.webp",
+    src: PHOTO_BASE + "wall-05.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-32.webp",
+    src: PHOTO_BASE + "wall-32.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/us-selfie.webp",
+    src: PHOTO_BASE + "us-selfie.webp",
     w: 1600, h: 1200,
     alt: "A selfie of Shane and Alasdair dressed up together",
     tape: "sky"
   },
   {
-    src: "images/wall-42.webp",
+    src: PHOTO_BASE + "wall-42.webp",
     w: 400, h: 1200,
     alt: "A photobooth strip from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-09.webp",
+    src: PHOTO_BASE + "wall-09.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-20.webp",
+    src: PHOTO_BASE + "wall-20.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/us-pinky.webp",
+    src: PHOTO_BASE + "us-pinky.webp",
     w: 900, h: 1200,
     alt: "Their pinkies linked together",
     tape: "sky"
   },
   {
-    src: "images/wall-27.webp",
+    src: PHOTO_BASE + "wall-27.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-37.webp",
+    src: PHOTO_BASE + "wall-37.webp",
     w: 678, h: 1200,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-02.webp",
+    src: PHOTO_BASE + "wall-02.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-14.webp",
+    src: PHOTO_BASE + "wall-14.webp",
     w: 900, h: 1200,
     alt: "A collage of their dog in a cap beside Shane",
     tape: "sky"
   },
   {
-    src: "images/wall-29.webp",
+    src: PHOTO_BASE + "wall-29.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-40.webp",
+    src: PHOTO_BASE + "wall-40.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-11.webp",
+    src: PHOTO_BASE + "wall-11.webp",
     w: 1200, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/us-sleep.webp",
+    src: PHOTO_BASE + "us-sleep.webp",
     w: 1000, h: 1000,
     alt: "Alasdair asleep in bed under a blanket",
     tape: "sky"
   },
   {
-    src: "images/wall-35.webp",
+    src: PHOTO_BASE + "wall-35.webp",
     w: 903, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-30.webp",
+    src: PHOTO_BASE + "wall-30.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-18.webp",
+    src: PHOTO_BASE + "wall-18.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-03.webp",
+    src: PHOTO_BASE + "wall-03.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "sky"
   },
   {
-    src: "images/wall-12.webp",
+    src: PHOTO_BASE + "wall-12.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/her.webp",
+    src: PHOTO_BASE + "her.webp",
     w: 900, h: 1600,
     alt: "A close-up selfie of Shane",
     tape: "butter"
   },
   {
-    src: "images/wall-07.webp",
+    src: PHOTO_BASE + "wall-07.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-23.webp",
+    src: PHOTO_BASE + "wall-23.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sky"
   },
   {
-    src: "images/wall-19.webp",
+    src: PHOTO_BASE + "wall-19.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-36.webp",
+    src: PHOTO_BASE + "wall-36.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-06.webp",
+    src: PHOTO_BASE + "wall-06.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-25.webp",
+    src: PHOTO_BASE + "wall-25.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sky"
   },
   {
-    src: "images/wall-39.webp",
+    src: PHOTO_BASE + "wall-39.webp",
     w: 681, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-01.webp",
+    src: PHOTO_BASE + "wall-01.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-21.webp",
+    src: PHOTO_BASE + "wall-21.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-33.webp",
+    src: PHOTO_BASE + "wall-33.webp",
     w: 1200, h: 675,
     alt: "A memory from our second year",
     tape: "sky"
   },
   {
-    src: "images/wall-10.webp",
+    src: PHOTO_BASE + "wall-10.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-28.webp",
+    src: PHOTO_BASE + "wall-28.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-38.webp",
+    src: PHOTO_BASE + "wall-38.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-04.webp",
+    src: PHOTO_BASE + "wall-04.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "sky"
   },
   {
-    src: "images/wall-16.webp",
+    src: PHOTO_BASE + "wall-16.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-24.webp",
+    src: PHOTO_BASE + "wall-24.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-31.webp",
+    src: PHOTO_BASE + "wall-31.webp",
     w: 1200, h: 900,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-08.webp",
+    src: PHOTO_BASE + "wall-08.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "sky"
   },
   {
-    src: "images/wall-34.webp",
+    src: PHOTO_BASE + "wall-34.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-41.webp",
+    src: PHOTO_BASE + "wall-41.webp",
     w: 400, h: 1200,
     alt: "A photobooth strip from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-15.webp",
+    src: PHOTO_BASE + "wall-15.webp",
     w: 900, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/wall-26.webp",
+    src: PHOTO_BASE + "wall-26.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sky"
   },
   {
-    src: "images/wall-13.webp",
+    src: PHOTO_BASE + "wall-13.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "rose"
   },
   {
-    src: "images/wall-17.webp",
+    src: PHOTO_BASE + "wall-17.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "butter"
   },
   {
-    src: "images/wall-22.webp",
+    src: PHOTO_BASE + "wall-22.webp",
     w: 675, h: 1200,
     alt: "A memory from our second year",
     tape: "sage"
   },
   {
-    src: "images/hero-photobooth.webp",
+    src: PHOTO_BASE + "hero-photobooth.webp",
     w: 900, h: 1350,
     alt: "A photobooth strip of them with cat stickers",
     tape: "sky"
   },
   {
-    src: "images/him-bouquet.webp",
+    src: PHOTO_BASE + "him-bouquet.webp",
     w: 900, h: 1125,
     alt: "A bouquet of flowers made of photos of Alasdair's face",
     tape: "rose"
