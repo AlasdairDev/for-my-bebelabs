@@ -295,7 +295,7 @@ main { position: relative; z-index: 2; }
 .bouquet {
   position: relative;
   width: min(560px, 100%);
-  height: 700px;
+  height: 730px;
   margin: 0 auto;
   z-index: 1;
 }
@@ -317,21 +317,21 @@ main { position: relative; z-index: 2; }
 
 .bouquet-left {
   left: 2%;
-  bottom: 340px;
+  bottom: 443px;
   --size: clamp(155px, 16vw, 184px);
   transform: rotate(-11deg);
   z-index: 3;
 }
 .bouquet-center {
   left: 50%;
-  bottom: 358px;
+  bottom: 460px;
   --size: clamp(205px, 21vw, 252px);
   transform: translateX(-52%) rotate(3deg);
   z-index: 4;
 }
 .bouquet-right {
   right: 4%;
-  bottom: 344px;
+  bottom: 428px;
   --size: clamp(142px, 15vw, 170px);
   transform: rotate(13deg);
   z-index: 2;
@@ -340,8 +340,8 @@ main { position: relative; z-index: 2; }
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: min(322px, 58%);
-  height: 360px;
+  width: min(298px, 56%);
+  height: 418px;
   transform: translateX(-50%) rotate(-2deg) scale(.94);
   transform-origin: 50% 100%;
   opacity: 0;
@@ -805,11 +805,11 @@ main { position: relative; z-index: 2; }
   .hero-copy { max-width: 660px; margin-inline: auto; }
   .hero-visual { min-height: 620px; }
   .hero::before { top: 46%; right: -12%; width: 70vw; height: 70vw; }
-  .bouquet { height: 660px; }
-  .bouquet-left { bottom: 320px; --size: 168px; }
-  .bouquet-center { bottom: 338px; --size: 224px; }
-  .bouquet-right { bottom: 322px; --size: 152px; }
-  .bouquet-wrap { width: min(300px, 57%); height: 340px; }
+  .bouquet { height: 706px; }
+  .bouquet-left { bottom: 425px; --size: 168px; }
+  .bouquet-center { bottom: 442px; --size: 224px; }
+  .bouquet-right { bottom: 412px; --size: 152px; }
+  .bouquet-wrap { width: min(266px, 52%); height: 402px; }
 }
 
 @media (max-width: 760px) {
@@ -822,11 +822,11 @@ main { position: relative; z-index: 2; }
   .hero h1 { font-size: clamp(3.1rem, 13vw, 4.8rem); }
   .sub { font-size: .97rem; }
   .hero-visual { min-height: 500px; }
-  .bouquet { width: min(430px, 96%); height: 560px; }
-  .bouquet-left { left: 0; bottom: 262px; --size: 143px; transform: rotate(-11deg); }
-  .bouquet-center { bottom: 276px; --size: 183px; transform: translateX(-52%) rotate(3deg); }
-  .bouquet-right { right: 1.5%; bottom: 264px; --size: 134px; transform: rotate(12deg); }
-  .bouquet-wrap { width: min(250px, 60%); height: 276px; }
+  .bouquet { width: min(430px, 96%); height: 602px; }
+  .bouquet-left { left: 0; bottom: 358px; --size: 143px; transform: rotate(-11deg); }
+  .bouquet-center { bottom: 373px; --size: 183px; transform: translateX(-52%) rotate(3deg); }
+  .bouquet-right { right: 1.5%; bottom: 350px; --size: 134px; transform: rotate(12deg); }
+  .bouquet-wrap { width: min(222px, 54%); height: 338px; }
   .ribbon { width: 88px; height: 59px; bottom: 4px; }
   .ribbon-band { bottom: 12px; height: 10px; }
 
