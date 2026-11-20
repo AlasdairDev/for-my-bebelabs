@@ -23,8 +23,8 @@
   const STEM_SVG = `
     <svg viewBox="0 0 120 220" aria-hidden="true" focusable="false">
       <path class="stem-line" d="M60 220 C74 170 46 120 60 0" />
-      <path class="leaf" d="M60 160 C42 152 32 137 28 120 C44 126 55 139 60 160Z" />
-      <path class="leaf" d="M60 112 C78 104 88 89 92 73 C76 79 65 92 60 112Z" />
+      <path class="leaf" d="M60 82 C42 74 32 59 28 42 C44 48 55 61 60 82Z" />
+      <path class="leaf" d="M60 42 C78 34 88 19 92 3 C76 9 65 22 60 42Z" />
     </svg>
   `;
 
@@ -133,6 +133,35 @@
       leaves.setAttribute("aria-hidden", "true");
       leaves.innerHTML = "<span></span><span></span><span></span>";
       bouquetEl.appendChild(leaves);
+
+      const stemLayer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      stemLayer.setAttribute("class", "bouquet-stems");
+      stemLayer.setAttribute("aria-hidden", "true");
+      bouquetEl.insertBefore(stemLayer, bouquetEl.firstChild);
+
+      const drawBouquetStems = () => {
+        const box = bouquetEl.getBoundingClientRect();
+        if (!box.width || !box.height) return;
+        const neckY = wrap.offsetTop + 6;
+        const paths = heroFlowers.map((flower) => {
+          const bloom = flower.querySelector(".bloom");
+          if (!bloom) return "";
+          const rect = bloom.getBoundingClientRect();
+          const x1 = rect.left + rect.width / 2 - box.left;
+          const y1 = rect.bottom - box.top;
+          const x2 = box.width / 2;
+          const y2 = neckY;
+          const cx = x1 + (x2 - x1) * 0.35;
+          const cy = y1 + (y2 - y1) * 0.4;
+          return `M ${x1.toFixed(1)} ${y1.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+        }).filter(Boolean);
+
+        stemLayer.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
+        stemLayer.innerHTML = paths.map((d) => `<path d="${d}" />`).join("");
+      };
+
+      window.requestAnimationFrame(drawBouquetStems);
+      window.addEventListener("resize", drawBouquetStems);
 
       heroVisual.appendChild(bouquetEl);
 
