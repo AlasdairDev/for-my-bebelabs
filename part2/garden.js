@@ -210,14 +210,14 @@
       };
 
       const fitBouquet = () => {
-        if (window.matchMedia("(max-width: 980px)").matches) {
+        if (window.matchMedia("(max-width: 620px), (max-height: 560px)").matches) {
           bouquetEl.style.removeProperty("--fit");
           return;
         }
         const designH = bouquetEl.offsetHeight || 1;
         const top = heroVisual.getBoundingClientRect().top + window.scrollY;
         const room = window.innerHeight - top - 18;
-        const fit = Math.max(0.74, Math.min(1, room / designH));
+        const fit = Math.max(0.62, Math.min(1, room / designH));
         bouquetEl.style.setProperty("--fit", fit.toFixed(4));
       };
 
