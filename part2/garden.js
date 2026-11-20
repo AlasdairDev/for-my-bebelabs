@@ -143,21 +143,24 @@
         const box = bouquetEl.getBoundingClientRect();
         if (!box.width || !box.height) return;
         const neckY = wrap.offsetTop + 6;
-        const paths = heroFlowers.map((flower) => {
+        const gather = [-26, 0, 26];
+        const paths = heroFlowers.map((flower, index) => {
           const bloom = flower.querySelector(".bloom");
           if (!bloom) return "";
           const rect = bloom.getBoundingClientRect();
           const x1 = rect.left + rect.width / 2 - box.left;
           const y1 = rect.bottom - box.top;
-          const x2 = box.width / 2;
-          const y2 = neckY;
-          const cx = x1 + (x2 - x1) * 0.35;
-          const cy = y1 + (y2 - y1) * 0.4;
+          const x2 = box.width / 2 + (gather[index] || 0);
+          const y2 = neckY + 46;
+          const cx = x1 + (x2 - x1) * 0.4;
+          const cy = y1 + (y2 - y1) * 0.55;
           return `M ${x1.toFixed(1)} ${y1.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
         }).filter(Boolean);
 
         stemLayer.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
-        stemLayer.innerHTML = paths.map((d) => `<path d="${d}" />`).join("");
+        stemLayer.innerHTML = paths
+          .map((d) => `<path class="stem-under" d="${d}" /><path class="stem-over" d="${d}" />`)
+          .join("");
       };
 
       window.requestAnimationFrame(drawBouquetStems);
