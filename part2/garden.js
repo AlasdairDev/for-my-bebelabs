@@ -113,6 +113,11 @@
         allFlowers.push(flower);
       });
 
+      const wrapBack = document.createElement("div");
+      wrapBack.className = "bouquet-wrap-back";
+      wrapBack.setAttribute("aria-hidden", "true");
+      bouquetEl.appendChild(wrapBack);
+
       const wrap = document.createElement("div");
       wrap.className = "bouquet-wrap";
       wrap.innerHTML = `
