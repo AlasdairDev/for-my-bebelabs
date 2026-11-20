@@ -127,6 +127,13 @@
         </span>
       `;
       bouquetEl.appendChild(wrap);
+
+      const leaves = document.createElement("div");
+      leaves.className = "bouquet-leaves";
+      leaves.setAttribute("aria-hidden", "true");
+      leaves.innerHTML = "<span></span><span></span><span></span>";
+      bouquetEl.appendChild(leaves);
+
       heroVisual.appendChild(bouquetEl);
 
       const bloomBouquet = () => {
