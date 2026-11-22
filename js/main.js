@@ -1,5 +1,5 @@
 /*
-   two years of us — interactions
+   two years of us: interactions
    */
 
 (() => {

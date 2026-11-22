@@ -1,5 +1,5 @@
 /*
-   our little garden — interactions
+   our little garden: interactions
    */
 
 (() => {
