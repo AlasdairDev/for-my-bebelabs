@@ -1,6 +1,5 @@
-/* ═══════════════════════════════════════════════════════════
+/*
    OUR PHOTOS
-   ───────────────────────────────────────────────────────────
    A textless wall of us. Every photo from the "my loves"
    folder is here, plus the favorite photos from the older sites.
 
@@ -12,7 +11,7 @@
    Captions are optional. This wall has none, so it stays
    a pure photo wall. To add text under one photo, add a
    line like: caption: "our little caption",
-   ═══════════════════════════════════════════════════════════ */
+   */
 
 const PHOTO_BASE = window.PHOTO_BASE || "images/";
 

@@ -1,6 +1,6 @@
-/* ═══════════════════════════════════════════════════════════
+/*
    two years of us — interactions
-   ═══════════════════════════════════════════════════════════ */
+   */
 
 (() => {
   "use strict";
@@ -15,7 +15,7 @@
     document.body.classList.toggle("no-scroll", locked);
   };
 
-  /* ── intro envelope ──────────────────────────────────── */
+  /* intro envelope */
   const intro = $("#intro");
   const introEnvelope = $("#introEnvelope");
   const html = document.documentElement;
@@ -56,7 +56,7 @@
     if (introEnvelope) introEnvelope.focus({ preventScroll: true });
   }
 
-  /* ── nav + scroll progress ───────────────────────────── */
+  /* nav + scroll progress */
   const nav = $("#nav");
   const progressBar = $("#progressBar");
 
@@ -71,7 +71,7 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ── nav landing positions ───────────────────────────── */
+  /* nav landing positions */
   const scrollToSection = (target) => {
     if (!target) return;
     const behavior = reduceMotion ? "auto" : "smooth";
@@ -116,7 +116,7 @@
     });
   });
 
-  /* ── live counter ────────────────────────────────────── */
+  /* live counter */
   // 20 November 2024, 00:00 Philippine time
   const START = Date.UTC(2024, 10, 19, 16, 0, 0);
   const daysEl = $("#days");
@@ -142,7 +142,7 @@
   tick();
   window.setInterval(tick, 1000);
 
-  /* ── reveal on scroll ────────────────────────────────── */
+  /* reveal on scroll */
   const revealItems = $$("[data-reveal]");
   if ("IntersectionObserver" in window && !reduceMotion) {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -161,7 +161,7 @@
     revealItems.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ── photo wall + lightbox ───────────────────────────── */
+  /* photo wall + lightbox */
   const wall = $("#photoWall");
   const lightbox = $("#lightbox");
   const lbImg = $("#lbImg");
@@ -274,7 +274,7 @@
     });
   }
 
-  /* ── reasons deck ────────────────────────────────────── */
+  /* reasons deck */
   const REASONS = [
     "because you make the distance feel smaller. hindi mo ginagawang madali, pero ginagawa mong worth it.",
     "because you listen to my rants, even the paulit-ulit ones. you never make me feel like I'm too much.",
@@ -354,7 +354,7 @@
     if (nextReason) nextReason.addEventListener("click", drawReason);
   }
 
-  /* ── the letter ──────────────────────────────────────── */
+  /* the letter */
   const envelopeBig = $("#envelopeBig");
   const letterPaper = $("#letterPaper");
   const closeLetter = $("#closeLetter");
@@ -401,7 +401,7 @@
   }
   if (closeLetter) closeLetter.addEventListener("click", closeLetterView);
 
-  /* ── tiny secret ─────────────────────────────────────── */
+  /* tiny secret */
   const secretForm = $("#secretForm");
   const secretInput = $("#secretInput");
   const secretMsg = $("#secretMsg");
@@ -439,7 +439,7 @@
     });
   }
 
-  /* ── heart bursts ────────────────────────────────────── */
+  /* heart bursts */
   function burstAt(x, y, amount) {
     if (reduceMotion) return;
     const count = amount || 12;
@@ -482,7 +482,7 @@
     });
   }
 
-  /* ── ambient petals ──────────────────────────────────── */
+  /* ambient petals */
   const petalLayer = $("#petals");
   if (petalLayer && !reduceMotion) {
     const count = window.innerWidth < 620 ? 8 : 14;
@@ -499,7 +499,7 @@
     }
   }
 
-  /* ── a tiny console note ─────────────────────────────── */
+  /* a tiny console note */
   console.log("%c♡ for shane ♡", "color:#b23a55;font-size:22px;font-weight:bold;");
   console.log("%cthe little secret is waiting.", "color:#8a6f6a;font-style:italic;font-size:13px;");
 })();

@@ -1,6 +1,6 @@
-/* ═══════════════════════════════════════════════════════════
+/*
    our little garden — interactions
-   ═══════════════════════════════════════════════════════════ */
+   */
 
 (() => {
   "use strict";
@@ -273,7 +273,7 @@
     }
   }
 
-  /* ── bloom again ────────────────────────────────────── */
+  /* bloom again */
   if (rebloom) {
     rebloom.addEventListener("click", () => {
       allFlowers.forEach((flower) => flower.classList.remove("is-bloomed"));
@@ -290,7 +290,7 @@
     });
   }
 
-  /* ── petal lightbox ─────────────────────────────────── */
+  /* petal lightbox */
   const renderLightbox = () => {
     const photo = PHOTOS[lightboxIndex];
     if (!photo || !lbImg) return;
@@ -348,7 +348,7 @@
     });
   }
 
-  /* ── nav shadow ─────────────────────────────────────── */
+  /* nav shadow */
   const nav = document.querySelector(".nav");
   const onScroll = () => {
     if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -356,7 +356,7 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ── floating petals ────────────────────────────────── */
+  /* floating petals */
   const petalLayer = document.getElementById("gardenPetals");
   if (petalLayer && !reduceMotion) {
     const count = window.innerWidth < 620 ? 8 : 14;

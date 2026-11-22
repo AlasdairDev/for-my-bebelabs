@@ -1,6 +1,5 @@
-/* ═══════════════════════════════════════════════════════════
+/*
    two years of us — a little place for shane
-   ───────────────────────────────────────────────────────────
    01. tokens & base
    02. texture, petals, intro
    03. nav & progress
@@ -16,9 +15,9 @@
    13. footer
    14. lightbox
    15. motion & responsive
-   ═══════════════════════════════════════════════════════════ */
+   */
 
-/* ── 01. tokens & base ─────────────────────────────────── */
+/* 01. tokens & base */
 :root {
   --cream: #654a52;
   --cream-2: #6b4f57;
@@ -120,7 +119,7 @@ em { font-style: italic; }
 
 main { position: relative; z-index: 2; }
 
-/* ── 02. texture, petals, intro ────────────────────────── */
+/* 02. texture, petals, intro */
 .grain {
   position: fixed;
   inset: 0;
@@ -346,7 +345,7 @@ html.intro-seen .intro { display: none; }
 .env-stamp img { width: 100%; height: auto; mix-blend-mode: multiply; }
 .envelope.is-opening .env-stamp { opacity: 0; }
 
-/* ── 03. nav ───────────────────────────────────────────── */
+/* 03. nav */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -442,7 +441,7 @@ html.intro-seen .intro { display: none; }
 .nav-links .nav-cta::after { display: none; }
 .nav-links .nav-cta:hover { background: var(--berry); border-color: var(--berry); color: var(--ink); }
 
-/* ── 04. buttons ───────────────────────────────────────── */
+/* 04. buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -484,7 +483,7 @@ html.intro-seen .intro { display: none; }
   transform: translateY(-2px);
 }
 
-/* ── 05. hero ──────────────────────────────────────────── */
+/* 05. hero */
 .hero {
   position: relative;
   max-width: 1200px;
@@ -774,7 +773,7 @@ html.intro-seen .intro { display: none; }
   white-space: nowrap;
 }
 
-/* ── 06. marquee ───────────────────────────────────────── */
+/* 06. marquee */
 .marquee {
   position: relative;
   overflow: hidden;
@@ -813,7 +812,7 @@ html.intro-seen .intro { display: none; }
   to   { transform: translateX(-50%); }
 }
 
-/* ── 07. shared section styles ─────────────────────────── */
+/* 07. shared section styles */
 .section {
   position: relative;
   max-width: 1140px;
@@ -896,7 +895,7 @@ html.intro-seen .intro { display: none; }
   transform: rotate(-2deg);
 }
 
-/* ── 08. story + timeline ──────────────────────────────── */
+/* 08. story + timeline */
 .story-top {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
@@ -1071,7 +1070,7 @@ html.intro-seen .intro { display: none; }
   color: var(--berry-deep);
 }
 
-/* ── 09. gallery ───────────────────────────────────────── */
+/* 09. gallery */
 .wall {
   columns: 3 230px;
   column-gap: 28px;
@@ -1123,7 +1122,7 @@ html.intro-seen .intro { display: none; }
 }
 .polaroid:hover img { filter: brightness(1.02) saturate(1.03) contrast(1.01); }
 
-/* ── 10. reasons deck ──────────────────────────────────── */
+/* 10. reasons deck */
 .reasons::before {
   content: "";
   position: absolute;
@@ -1231,7 +1230,7 @@ html.intro-seen .intro { display: none; }
 }
 .deck-wrap .btn { margin-top: 2px; }
 
-/* ── 11. rituals receipt ───────────────────────────────── */
+/* 11. rituals receipt */
 .rituals-grid {
   display: grid;
   grid-template-columns: 1fr .9fr;
@@ -1351,7 +1350,7 @@ html.intro-seen .intro { display: none; }
   transform: rotate(-8deg);
 }
 
-/* ── 12. letter + secret ───────────────────────────────── */
+/* 12. letter + secret */
 .letter-section { max-width: 940px; }
 
 .letter-stage {
@@ -1563,7 +1562,7 @@ html.intro-seen .intro { display: none; }
   to   { opacity: 1; transform: none; }
 }
 
-/* ── 13. footer ────────────────────────────────────────── */
+/* 13. footer */
 .footer {
   position: relative;
   margin-top: clamp(40px, 6vw, 70px);
@@ -1671,7 +1670,7 @@ html.intro-seen .intro { display: none; }
   color: rgba(248, 236, 223, .56);
 }
 
-/* ── 14. lightbox ──────────────────────────────────────── */
+/* 14. lightbox */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -1778,7 +1777,7 @@ html.intro-seen .intro { display: none; }
   }
 }
 
-/* ── 15. reveal + responsive ───────────────────────────── */
+/* 15. reveal + responsive */
 html.js [data-reveal] {
   opacity: 0;
   transform: translateY(22px);
